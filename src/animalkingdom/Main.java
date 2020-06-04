@@ -52,13 +52,16 @@ public class Main
 		// System.out.println(pigeon.getBreath());
 
 		// sort by year
+		System.out.println("\n*** sort by year newest to oldest ***");
 		// humans.sort((Human h1, Human h2) -> h1.getName().compareTo(h2.getName()));
 		// Integer.compare(d1.getNoOfStars(), d2.getNoOfStars());
 		fullList.sort((Animals a1, Animals a2) -> Integer.compare(a2.getYear(), a1.getYear()));
 		// fullList.sort(Comparator.comparing(a -> a.getYear(), Comparator.reverseOrder()));
 		fullList.forEach((a) -> System.out.println(a));
 
-
+		System.out.println("\n*** sort by name A to Z ***");
+		fullList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+        fullList.forEach((a) -> System.out.println(a));
 
 	}
 }
