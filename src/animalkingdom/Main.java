@@ -45,7 +45,19 @@ public class Main
 		fullList.add(perch);
 
 		// System.out.println(fullList.size());
-		System.out.println(fullList.get(0).toString());
+		System.out.println(fullList.toString());
+		// System.out.println(pigeon.getYear());
+		// System.out.println(pigeon.getName());
+		// System.out.println(pigeon.getMove());
+		// System.out.println(pigeon.getBreath());
+
+		// sort by year
+		// humans.sort((Human h1, Human h2) -> h1.getName().compareTo(h2.getName()));
+		// Integer.compare(d1.getNoOfStars(), d2.getNoOfStars());
+		fullList.sort((Animals a1, Animals a2) -> Integer.compare(a2.getYear(), a1.getYear()));
+		// fullList.sort(Comparator.comparing(a -> a.getYear(), Comparator.reverseOrder()));
+		fullList.forEach((a) -> System.out.println(a));
+
 
 
 	}

@@ -2,14 +2,15 @@ package animalkingdom;
 
 public class Mammals extends Animals
 {
-	private int id;
-    private String name;
-    private int year;
+	// private int id;
+ //    private String name;
+ //    private int year;
 	public Mammals(int id, String name, int year)
 	{
-		this.id = id;
-		this.name = name;
-		this.year = year;
+		super(id, name, year);
+		// this.id = id;
+		// this.name = name;
+		// this.year = year;
 	}
 	@Override
     public String getMove()
@@ -26,6 +27,10 @@ public class Mammals extends Animals
     {
         return "live births";
     }
+ //    public int getYear()
+	// {
+	// 	return year;
+	// }
 
     @Override
     public String toString()

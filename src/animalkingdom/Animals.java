@@ -2,18 +2,27 @@ package animalkingdom;
 
 abstract class Animals
 {
-	protected int fuel;
+	protected int id;
+	protected String name;
+	protected int year;
 
-	public Animals()
+	public Animals(int id, String name, int year)
 	{
-		fuel = 1;
+		this.id = id;
+		this.name = name;
+		this.year = year;
 	}
 	
 	abstract String getMove();
 	abstract String getBreath();
 	abstract String getReproduce();
-	void eat(int i)
-	{
-		fuel += i;
-	}
+	int getYear()
+    {
+        return year;
+    }
+    String getName()
+    {
+    	return name;
+    }
+	
 }
