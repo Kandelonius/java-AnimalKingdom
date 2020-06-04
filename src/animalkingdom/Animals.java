@@ -16,30 +16,4 @@ abstract class Animals
 	{
 		fuel += i;
 	}
-	// public int getId()
-	// {
-	// 	return id;
-	// }
-	// public String getName()
-	// {
-	// 	return name;
-	// }
-	// public int getYear()
- //    {
- //        return year;
- //    }
-
-	// public void setId(int id)
-	// {
-	// 	this.id = id;
-	// }
-	// public void setId(String name)
-	// {
-	// 	this.name = name;
-	// }
-	// public void setyear(int year)
-	// {
-	// 	this.year = year;
-	// }
-
 }

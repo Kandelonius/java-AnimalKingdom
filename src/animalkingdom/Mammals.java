@@ -26,4 +26,10 @@ public class Mammals extends Animals
     {
         return "live births";
     }
+
+    @Override
+    public String toString()
+    {
+        return "Mammals: " + " ID " + id + " Name " + name + " Year " + year ;
+    }
 }

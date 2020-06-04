@@ -7,5 +7,46 @@ public class Main
 	public static void main(String[] args)
 	{
 		System.out.println("Welcome to the jungle");
+
+		// (int id, String name, int year)
+		Mammals panda = new Mammals(0, "Panda", 1869);
+		Mammals zebra = new Mammals(1, "Zebra", 1778);
+		Mammals koala = new Mammals(2, "Koala", 1816);
+		Mammals sloth = new Mammals(3, "Sloth", 1804);
+		Mammals armadillo = new Mammals(4, "Armadillo", 1758);
+		Mammals raccoon = new Mammals(5, "Raccoon", 1758);
+		Mammals bigfoot = new Mammals(6, "Bigfoot", 2021);
+
+		Birds pigeon = new Birds(7, "Pigeon", 1837);
+		Birds peacock = new Birds(8, "Peacock", 1821);
+		Birds toucan = new Birds(9, "Toucan", 1758);
+		Birds parrot = new Birds(10, "Parrot", 1824);
+		Birds swan = new Birds(11, "Swan", 1758);
+
+		Fish salmon = new Fish(12, "Salmon", 1758);
+		Fish catfish = new Fish(13, "Catfish", 1817);
+		Fish perch = new Fish(14, "Perch", 1758);
+
+		List<Animals> fullList = new ArrayList<>();
+		fullList.add(panda);
+		fullList.add(zebra);
+		fullList.add(koala);
+		fullList.add(sloth);
+		fullList.add(armadillo);
+		fullList.add(raccoon);
+		fullList.add(bigfoot);
+		fullList.add(pigeon);
+		fullList.add(peacock);
+		fullList.add(toucan);
+		fullList.add(parrot);
+		fullList.add(swan);
+		fullList.add(salmon);
+		fullList.add(catfish);
+		fullList.add(perch);
+
+		// System.out.println(fullList.size());
+		System.out.println(fullList.get(0).toString());
+
+
 	}
 }
