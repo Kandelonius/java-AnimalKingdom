@@ -4,6 +4,25 @@ import java.util.*;
 
 public class Main
 {
+	private static List<Animals> filteredList = new ArrayList<>();
+
+	//         filterVehicles(myList, v -> v.getFuelLevel() < 0, true);
+    private static void filterAnimals(List<Animals> animals, CheckAnimal tester, boolean printit)
+    {
+    	filteredList.clear();
+
+        for (Animals a : animals)
+        {
+        	if (tester.test(a))
+        	{
+        		if (printit)
+        		{
+        			System.out.println(a.getBreath() + " " + a.getName());
+        		}
+        		filteredList.add(a);
+        	}
+        }
+    }
 	public static void main(String[] args)
 	{
 		System.out.println("Welcome to the jungle");
@@ -45,23 +64,44 @@ public class Main
 		fullList.add(perch);
 
 		// System.out.println(fullList.size());
-		System.out.println(fullList.toString());
+		// System.out.println(fullList.toString());
 		// System.out.println(pigeon.getYear());
 		// System.out.println(pigeon.getName());
 		// System.out.println(pigeon.getMove());
 		// System.out.println(pigeon.getBreath());
 
 		// sort by year
-		System.out.println("\n*** sort by year newest to oldest ***");
+		System.out.println("\n\n*** sort by year newest to oldest ***");
 		// humans.sort((Human h1, Human h2) -> h1.getName().compareTo(h2.getName()));
 		// Integer.compare(d1.getNoOfStars(), d2.getNoOfStars());
 		fullList.sort((Animals a1, Animals a2) -> Integer.compare(a2.getYear(), a1.getYear()));
 		// fullList.sort(Comparator.comparing(a -> a.getYear(), Comparator.reverseOrder()));
 		fullList.forEach((a) -> System.out.println(a));
 
-		System.out.println("\n*** sort by name A to Z ***");
+		System.out.println("\n\n*** sort by name A to Z ***");
 		fullList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
         fullList.forEach((a) -> System.out.println(a));
 
+        System.out.println("\n\n*** sort by how they move ***");
+		fullList.sort((a1, a2) -> a1.getMove().compareToIgnoreCase(a2.getMove()));
+        fullList.forEach((a) -> System.out.println(a));
+
+        System.out.println("\n\n*** sort by breath with lungs ***");
+        filterAnimals(fullList, a -> (a.getBreath() == "lungs"), false);
+        filteredList.forEach((a) -> System.out.println(a));
+
+        System.out.println("\n\n*** List only those animals that breath with lungs and were named in 1758 ***");
+        filterAnimals(fullList, a -> (a.getBreath() == "lungs") && (a.getYear() == 1758), false);
+        filteredList.forEach((a) -> System.out.println(a));
+
+        System.out.println("\n\n*** List only those animals that lay eggs and breath with lungs ***");
+        filterAnimals(fullList, a -> (a.getBreath() == "lungs") && (a.getReproduce() == "eggs"), false);
+        filteredList.forEach((a) -> System.out.println(a));
+
+        System.out.println("\n\n*** List alphabetically only those animals that were named in 1758 ***");
+        filterAnimals(fullList, a -> (a.getYear() == 1758), false);
+        // filteredList.sort((v1, v2) -> v1.getName().compareToIgnoreCase(v2.getName()));
+        filteredList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+        filteredList.forEach((a) -> System.out.println(a));
 	}
 }
