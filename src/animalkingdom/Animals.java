@@ -2,6 +2,7 @@ package animalkingdom;
 
 abstract class Animals
 {
+	// fields
 	protected int id;
 	protected String name;
 	protected int year;

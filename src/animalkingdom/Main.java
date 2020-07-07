@@ -6,7 +6,6 @@ public class Main
 {
 	private static List<Animals> filteredList = new ArrayList<>();
 
-	//         filterVehicles(myList, v -> v.getFuelLevel() < 0, true);
     private static void filterAnimals(List<Animals> animals, CheckAnimal tester, boolean printit)
     {
     	filteredList.clear();
@@ -27,7 +26,6 @@ public class Main
 	{
 		System.out.println("Welcome to the jungle");
 
-		// (int id, String name, int year)
 		Mammals panda = new Mammals(0, "Panda", 1869);
 		Mammals zebra = new Mammals(1, "Zebra", 1778);
 		Mammals koala = new Mammals(2, "Koala", 1816);
@@ -63,19 +61,9 @@ public class Main
 		fullList.add(catfish);
 		fullList.add(perch);
 
-		// System.out.println(fullList.size());
-		// System.out.println(fullList.toString());
-		// System.out.println(pigeon.getYear());
-		// System.out.println(pigeon.getName());
-		// System.out.println(pigeon.getMove());
-		// System.out.println(pigeon.getBreath());
-
 		// sort by year
 		System.out.println("\n\n*** sort by year newest to oldest ***");
-		// humans.sort((Human h1, Human h2) -> h1.getName().compareTo(h2.getName()));
-		// Integer.compare(d1.getNoOfStars(), d2.getNoOfStars());
 		fullList.sort((Animals a1, Animals a2) -> Integer.compare(a2.getYear(), a1.getYear()));
-		// fullList.sort(Comparator.comparing(a -> a.getYear(), Comparator.reverseOrder()));
 		fullList.forEach((a) -> System.out.println(a));
 
 		System.out.println("\n\n*** sort by name A to Z ***");
@@ -98,9 +86,13 @@ public class Main
         filterAnimals(fullList, a -> (a.getBreath() == "lungs") && (a.getReproduce() == "eggs"), false);
         filteredList.forEach((a) -> System.out.println(a));
 
-        System.out.println("\n\n*** List alphabetically only those animals that were named in 1758 ***");
+        System.out.println("\n\n*** List alphabetically only those animals that were named in 999991758 ***");
         filterAnimals(fullList, a -> (a.getYear() == 1758), false);
-        // filteredList.sort((v1, v2) -> v1.getName().compareToIgnoreCase(v2.getName()));
+        filteredList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+        filteredList.forEach((a) -> System.out.println(a));
+
+        System.out.println("\n\n*** For the list of animals, list alphabetically those animals that are mammals ***");
+        filterAnimals(fullList, a -> (a instanceof Mammals), false);
         filteredList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
         filteredList.forEach((a) -> System.out.println(a));
 	}
